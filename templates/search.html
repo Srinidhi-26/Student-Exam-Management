@@ -1,0 +1,16 @@
+{% extends 'list.html' %}
+{% block body %}
+<br/>
+<h2>Searched Student</h2>
+
+    <p>{{ searches }}</p></br>
+
+
+            {% for name in contacts %}
+                {{ name.id }}
+                {{ name.name }}
+                {{ name.phno }}
+                {{ name.email }}
+            {% endfor %}
+
+{% endblock %}

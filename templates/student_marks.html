@@ -1,0 +1,36 @@
+{% extends 'intro.html' %}
+{% block body %}
+<p class="text-right"><a href="{{url_for('add_marks')}}" class="btn btn-success">ADD Marks</a></p>
+  <table class='table table-bordered'>
+    <thead>
+      <th>SID</th>
+      <th>Name</th>
+      <th>SEM 1</th>
+      <th>SEM 2</th>
+      <th>SEM 3</th>
+      <th>SEM 4</th>
+      <th>SEM 5</th>
+      <th>SEM 6</th>
+      <th>SEM 7</th>
+      <th>SEM 8</th>
+    </thead>
+    <tbody>
+      {% for row in all %}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{row.name}}</td>
+          <td>{{row.sem1}}</td>
+          <td>{{row.sem2}}</td>
+          <td>{{row.sem3}}</td>
+          <td>{{row.sem4}}</td>
+          <td>{{row.sem5}}</td>
+          <td>{{row.sem6}}</td>
+          <td>{{row.sem7}}</td>
+          <td>{{row.sem8}}</td>
+            <td><a href='{{url_for("edit_add_marks",id=row.id)}}' class='btn btn-primary'>Edit</a></td>
+        </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+
+{% endblock %}

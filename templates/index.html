@@ -1,0 +1,9 @@
+{% extends 'intro.html' %}
+{% block body %}
+
+<p class="text-primary"><a href="{{url_for('add_student')}}" class="text-success">Create Student</a> <a href="{{url_for('delete_student')}}" class="text-info"> Delete Student</a> <a href="{{url_for('list')}}" class="text-dark">Students List</a>   <a href="{{url_for('student_marks')}}" class="text-warning">Students Marks</a></p>
+<center>
+<h1>STUDENT EXAM MANAGEMENT</h1>
+</center>
+
+{% endblock %}

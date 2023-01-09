@@ -1,0 +1,51 @@
+{% extends 'student_marks.html' %}
+{% block body %}
+<div class="row">
+    <div class="col-5 mx-auto">
+        <h3>Edit Student marks</h3>
+        <form method="post" action='/edit_add_marks/{{edit_add_marks_to_update.id}}'>
+<!--            <div class="form-group">-->
+<!--                <label>SID</label>-->
+<!--                <input type="text" name="id" required class="form-control" value="{{edit_add_marks_to_update.id}}">-->
+<!--            </div>-->
+            <div class="form-group">
+                <label>Student Name</label>
+                <input type="text" name="name" required class="form-control" value="{{edit_add_marks_to_update.name}}">
+            </div>
+             <div class="'form-group">
+                <label>SEM1</label>
+                <input type="text" name="sem1" required class="form-control" value="{{edit_add_marks_to_update.sem1}}">
+            </div>
+             <div class="'form-group">
+                <label>SEM2</label>
+                <input type="text" name="sem2" required class="form-control" value="{{edit_add_marks_to_update.sem2}}">
+            </div>
+            <div class="'form-group">
+                <label>SEM3</label>
+                <input type="text" name="sem3" required class="form-control" value="{{edit_add_marks_to_update.sem3}}">
+            </div>
+            <div class="'form-group">
+                <label>SEM4</label>
+                <input type="text" name="sem4" required class="form-control" value="{{edit_add_marks_to_update.sem4}}">
+            </div>
+             <div class="'form-group">
+                <label>SEM5</label>
+                <input type="text" name="sem5" required class="form-control" value="{{edit_add_marks_to_update.sem5}}">
+            </div>
+            <div class="'form-group">
+                <label>SEM6</label>
+                <input type="text" name="sem6" required class="form-control" value="{{edit_add_marks_to_update.sem6}}">
+            </div>
+           <div class="'form-group">
+                <label>SEM7</label>
+                <input type="text" name="sem7" required class="form-control" value="{{edit_add_marks_to_update.sem7}}">
+            </div>
+           <div class="'form-group">
+                <label>SEM8</label>
+                <input type="text" name="sem8" required class="form-control" value="{{edit_add_marks_to_update.sem8}}">
+            </div>
+            <input type="submit" value="submit" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+{% endblock %}

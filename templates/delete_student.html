@@ -1,0 +1,15 @@
+{% extends 'intro.html' %}
+{% block body %}
+
+    <form method="post">
+
+            <div class="form-group">
+                <label for="id">SID</label>
+                <input type="text" name="id" required class="form-control">
+                <label for="name">Student Name</label>
+                <input type="text" name="name" required class="form-control">
+                <input type="submit" value="submit">
+
+            </div>
+    </form>
+{% endblock %}
