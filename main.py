@@ -1,4 +1,3 @@
-import SearchForm as SearchForm
 from flask import Flask,render_template,request,flash,redirect,url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql.functions import user
@@ -142,7 +141,7 @@ def student_marks():
     all = Marks.query.order_by(Marks.sem1).paginate(page=page, per_page=3)
     all = Marks.query.order_by(Marks.sem2).paginate(page=page, per_page=3)
     all = Marks.query.order_by(Marks.sem3).paginate(page=page, per_page=3)
-    return render_template('student_marks.html',all=all, page=page)
+    return render_template('student_marks.html',all=all, page=page,)
 
 
 @app.route("/add_marks", methods=["GET","POST"])
@@ -192,13 +191,12 @@ def edit_add_marks(id):
 
 @app.route("/search",methods=["post","GET"])
 def search():
-    form = SearchForm()
-    students=Student.query
-    if form.validate_on_submit():
-        searches = form.searched.data
-        students=students.filter(Student.name.like('%' + searches + '%'))
-        students= students.order_by(Student.name).all
-    return render_template("search.html", form=form, students=students)
+    if request.method == "POST":
+        a = request.form.get('searched')
+        ab=a
+        all = Student.query.filter(Student.name.ilike(f"%{a}%")).all()
+        return render_template("search.html", all=all, ab=ab)
+    return render_template("list.html")
 
 if __name__=='__main__':
     app.secret_key='admin123'
